@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - KidsCodingHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <!-- Login Gate -->
+    <div id="login-gate">
+        <div class="login-card">
+            <h2>تسجيل الدخول - KidsCodingHub</h2>
+            <p>أدخل مفتاح الوصول السري للمتابعة</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <input type="password" id="access-key" placeholder="مفتاح الوصول" required>
+                </div>
+                <button type="submit" class="login-btn">دخول</button>
+                <div id="login-error" class="error-message hidden">مفتاح الوصول غير صحيح</div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Dashboard Page -->
+    <div id="dashboard-page" class="hidden">
+        <div class="container">
+            <header class="dashboard-header">
+                <div class="logo">
+                    <img src="https://z-cdn-media.chatglm.cn/files/4b712578-cf5f-4356-bac7-d3a04f2d41e6_apple-touch-icon.png?auth_key=1863513432-30f4bf1278644218956aced52f0f4097-0-bd3585655df087e840ea4406c66760db" alt="KidsCodingHub Logo">
+                    <span class="logo-text">KidsCodingHub - لوحة التحكم</span>
+                </div>
+                <button class="logout-btn" id="logout-btn">تسجيل الخروج</button>
+            </header>
+            
+            <main class="dashboard-main">
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-registrations">0</div>
+                        <div class="stat-label">إجمالي التسجيلات</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="new-registrations">0</div>
+                        <div class="stat-label">تسجيلات جديدة (7 أيام)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="beginner-count">0</div>
+                        <div class="stat-label">المستوى الأول</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="advanced-count">0</div>
+                        <div class="stat-label">المستوى المتقدم</div>
+                    </div>
+                </div>
+                
+                <div class="data-table">
+                    <div class="table-header">
+                        <div class="table-title">بيانات التسجيل</div>
+                        <button class="refresh-btn" id="refresh-btn">
+                            <i class="fas fa-sync-alt"></i> تحديث
+                        </button>
+                    </div>
+                    <div class="table-container">
+                        <table id="registrations-table">
+                            <thead>
+                                <tr>
+                                    <th>التاريخ</th>
+                                    <th>اسم ولي الأمر</th>
+                                    <th>رقم الهاتف</th>
+                                    <th>البريد الإلكتروني</th>
+                                    <th>اسم الطفل</th>
+                                    <th>عمر الطفل</th>
+                                    <th>المستوى</th>
+                                    <th>الحالة</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                <!-- سيتم إضافة البيانات هنا بواسطة JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

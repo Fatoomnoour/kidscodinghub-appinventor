@@ -1,247 +1,91 @@
-:root {
-    --primary-color: #FF5722;
-    --secondary-color: #FFC107;
-    --accent-color: #2196F3;
-    --text-color: #333333;
-    --light-bg: #F5F5F5;
-    --white-bg: #FFFFFF;
-    --card-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - KidsCodingHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <!-- Login Gate -->
+    <div id="login-gate">
+        <div class="login-card">
+            <h2>تسجيل الدخول - KidsCodingHub</h2>
+            <p>أدخل مفتاح الوصول السري للمتابعة</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <input type="password" id="access-key" placeholder="مفتاح الوصول" required>
+                </div>
+                <button type="submit" class="login-btn">دخول</button>
+                <div id="login-error" class="error-message hidden">مفتاح الوصول غير صحيح</div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Dashboard Page -->
+    <div id="dashboard-page" class="hidden">
+        <div class="container">
+            <header class="dashboard-header">
+                <div class="logo">
+                    <img src="https://z-cdn-media.chatglm.cn/files/4b712578-cf5f-4356-bac7-d3a04f2d41e6_apple-touch-icon.png?auth_key=1863513432-30f4bf1278644218956aced52f0f4097-0-bd3585655df087e840ea4406c66760db" alt="KidsCodingHub Logo">
+                    <span class="logo-text">KidsCodingHub - لوحة التحكم</span>
+                </div>
+                <button class="logout-btn" id="logout-btn">تسجيل الخروج</button>
+            </header>
+            
+            <main class="dashboard-main">
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-registrations">0</div>
+                        <div class="stat-label">إجمالي التسجيلات</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="new-registrations">0</div>
+                        <div class="stat-label">تسجيلات جديدة (7 أيام)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="beginner-count">0</div>
+                        <div class="stat-label">المستوى الأول</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="advanced-count">0</div>
+                        <div class="stat-label">المستوى المتقدم</div>
+                    </div>
+                </div>
+                
+                <div class="data-table">
+                    <div class="table-header">
+                        <div class="table-title">بيانات التسجيل</div>
+                        <button class="refresh-btn" id="refresh-btn">
+                            <i class="fas fa-sync-alt"></i> تحديث
+                        </button>
+                    </div>
+                    <div class="table-container">
+                        <table id="registrations-table">
+                            <thead>
+                                <tr>
+                                    <th>التاريخ</th>
+                                    <th>اسم ولي الأمر</th>
+                                    <th>رقم الهاتف</th>
+                                    <th>البريد الإلكتروني</th>
+                                    <th>اسم الطفل</th>
+                                    <th>عمر الطفل</th>
+                                    <th>المستوى</th>
+                                    <th>الحالة</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                <!-- سيتم إضافة البيانات هنا بواسطة JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Tajawal', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light-bg);
-}
-
-.container {
-    width: 95%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px 0;
-}
-
-/* Login Gate Styles */
-#login-gate {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #FFF5E6 0%, #E3F2FD 100%);
-}
-
-.login-card {
-    background-color: var(--white-bg);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: var(--card-shadow);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-}
-
-.login-card h2 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.login-card p {
-    color: #666;
-    margin-bottom: 25px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    font-family: inherit;
-    font-size: 1rem;
-    text-align: center;
-}
-
-.login-btn {
-    width: 100%;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.login-btn:hover {
-    background-color: #E64A19;
-}
-
-.error-message {
-    color: #D32F2F;
-    margin-top: 15px;
-    font-weight: 500;
-}
-
-.hidden {
-    display: none !important;
-}
-
-/* Dashboard Styles */
-.dashboard-header {
-    background-color: var(--white-bg);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: var(--card-shadow);
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo img {
-    height: 40px;
-}
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.logout-btn {
-    background-color: #F44336;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-.stats-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.stat-card {
-    background-color: var(--white-bg);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: var(--card-shadow);
-    text-align: center;
-}
-
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 5px;
-}
-
-.stat-label {
-    color: #666;
-    font-size: 0.9rem;
-}
-
-.data-table {
-    background-color: var(--white-bg);
-    border-radius: 10px;
-    box-shadow: var(--card-shadow);
-    overflow: hidden;
-}
-
-.table-header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.table-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.refresh-btn {
-    background-color: rgba(255,255,255,0.2);
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.refresh-btn:hover {
-    background-color: rgba(255,255,255,0.3);
-}
-
-.table-container {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 12px 15px;
-    text-align: right;
-    border-bottom: 1px solid #eee;
-    white-space: nowrap;
-}
-
-th {
-    background-color: #f9f9f9;
-    font-weight: 600;
-    color: #555;
-}
-
-tr:hover {
-    background-color: #f5f5f5;
-}
-
-.status {
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
-.status.new {
-    background-color: #E8F5E9;
-    color: #2E7D32;
-}
-
-.status.processing {
-    background-color: #FFF8E1;
-    color: #F57F17;
-}
-
-.status.completed {
-    background-color: #E3F2FD;
-    color: #1565C0;
-}
+    <script src="admin-script.js"></script>
+</body>
+</html>

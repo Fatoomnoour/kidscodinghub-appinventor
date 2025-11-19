@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كورس App Inventor - KidsCodingHub</title>
+    <meta name="description" content="تعلم البرمجة المرئية للأطفال مع كورس App Inventor المكون من ثلاثة مستويات. تمكين الجيل القادم من المبتكرين الرقميين.">
+    <meta name="keywords" content="برمجة للأطفال, App Inventor, KidsCodingHub, تعليم البرمجة, تطوير التطبيقات">
+    <link rel="icon" href="https://z-cdn-media.chatglm.cn/files/4b712578-cf5f-4356-bac7-d3a04f2d41e6_apple-touch-icon.png?auth_key=1863513432-30f4bf1278644218956aced52f0f4097-0-bd3585655df087e840ea4406c66760db" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <i class="fas fa-sun"></i>
+        <div class="theme-toggle-switch" id="theme-toggle-switch"></div>
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <img src="https://z-cdn-media.chatglm.cn/files/4b712578-cf5f-4356-bac7-d3a04f2d41e6_apple-touch-icon.png?auth_key=1863513432-30f4bf1278644218956aced52f0f4097-0-bd3585655df087e840ea4406c66760db" alt="KidsCodingHub Logo">
+                    <span class="logo-text">KidsCodingHub</span>
+                </a>
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#badges">الشارات</a></li>
+                        <li><a href="#course">الكورس</a></li>
+                        <li><a href="#methodology">منهجيتنا</a></li>
+                        <li><a href="#registration">التسجيل</a></li>
+                        <li><a href="#contact">تواصل معنا</a></li>
+                    </ul>
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>تمكين الجيل القادم من المبتكرين الرقميين</h1>
+                    <p>تعلم البرمجة المرئية للأطفال مع كورس App Inventor المكون من ثلاثة مستويات. من المبتدئ إلى الاحتراف، نحول الأفكار إلى تطبيقات حقيقية.</p>
+                    <div class="cta-buttons">
+                        <a href="#registration" class="btn btn-primary">سجل الآن</a>
+                        <a href="#course" class="btn btn-secondary">تعرف على الكورس</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/4b712578-cf5f-4356-bac7-d3a04f2d41e6_apple-touch-icon.png?auth_key=1863513432-30f4bf1278644218956aced52f0f4097-0-bd3585655df087e840ea4406c66760db" alt="KidsCodingHub Robot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Badges Section -->
+    <section class="badges-section" id="badges">
+        <div class="container">
+            <div class="section-title">
+                <h2>شارات الإنجاز والتحفيز</h2>
+                <p>احصل على شارات حصرية بعد إتمام كل مستوى وتحفيز أطفالك على الاستمرار في رحلة التعلم</p>
+            </div>
+            
+            <div class="badges-container">
+                <div class="badge">
+                    <div class="badge-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4>مبتكر مبتدئ</h4>
+                    <p>بعد إتمام المستوى الأول</p>
+                </div>
+                
+                <div class="badge">
+                    <div class="badge-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4>مطور تطبيقات</h4>
+                    <p>بعد إتمام المستوى الثاني</p>
+                </div>
+                
+                <div class="badge locked">
+                    <div class="badge-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>خبير البرمجة</h4>
+                    <p>بعد إتمام المستوى الثالث</p>
+                </div>
+                
+                <div class="badge locked">
+                    <div class="badge-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h4>بطل التخرج</h4>
+                    <p>بعد إتمام المشروع النهائي</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Section -->
+    <section class="course-section" id="course">
+        <div class="container">
+            <div class="section-title">
+                <h2>رحلتك في عالم البرمجة</h2>
+                <p>منهج متكامل ومتدرج من MIT App Inventor، مصمم خصيصًا للأطفال والمراهقين</p>
+            </div>
+            
+            <div class="course-tabs">
+                <button class="tab-btn active" data-tab="beginner">المستوى الأول</button>
+                <button class="tab-btn" data-tab="intermediate">المستوى الثاني</button>
+                <button class="tab-btn" data-tab="advanced">المستوى الثالث</button>
+            </div>
+            
+            <div class="tab-content active" id="beginner">
+                <div class="course-card">
+                    <h3><span class="icon"><i class="fas fa-rocket"></i></span>أسس الإبداع الرقمي</h3>
+                    <p>يمثل المستوى الأول حجر الزاوية في رحلة الطالب نحو عالم البرمجة والإبداع الرقمي. مصمم للمبتدئين تمامًا، حيث يركز على غرس المفاهيم الأساسية للبرمجة وبناء الثقة لدى الطلاب.</p>
+                    
+                    <div class="course-details">
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>8 جلسات</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>ساعة واحدة لكل جلسة</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-child"></i>
+                            <span>مناسب للمبتدئين</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-language"></i>
+                            <span>برمجة مرئية</span>
+                        </div>
+                    </div>
+                    
+                    <h4>ماذا سيتعلم الطفل؟</h4>
+                    <ul>
+                        <li>أساسيات بيئة App Inventor</li>
+                        <li>مفاهيم البرمجة: الأحداث، المتغيرات، الشروط</li>
+                        <li>القوائم والحلقات</li>
+                        <li>تصميم واجهات احترافية</li>
+                        <li>التطبيقات متعددة الشاشات</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="intermediate">
+                <div class="course-card">
+                    <h3><span class="icon"><i class="fas fa-code"></i></span>غوص أعمق في عالم تطوير التطبيقات</h3>
+                    <p>بعد إتقان الأساسيات، يأخذ المستوى الثاني الطلاب في رحلة أعمق نحو تطوير التطبيقات الحديثة. يركز على جعل التطبيقات "ذكية" من خلال حفظ البيانات، وتفاعلية من خلال الاستفادة من قدرات الهاتف.</p>
+                    
+                    <div class="course-details">
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>8 جلسات</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>ساعة واحدة لكل جلسة</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>متطلب: المستوى الأول</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-database"></i>
+                            <span>تخزين البيانات</span>
+                        </div>
+                    </div>
+                    
+                    <h4>ماذا سيتعلم الطفل؟</h4>
+                    <ul>
+                        <li>مقدمة إلى TinyDB لتخزين البيانات</li>
+                        <li>التفاعل مع الكاميرا والمعرض</li>
+                        <li>استخدام مستشعر الموقع</li>
+                        <li>إضافة الرسوم المتحركة والتفاعلات</li>
+                        <li>تصور البيانات بالمخططات والرسوم البيانية</li>
+                        <li>التحكم بالصوت: التعرف على الكلام ونص إلى كلام</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="advanced">
+                <div class="course-card">
+                    <h3><span class="icon"><i class="fas fa-star"></i></span>نحو الاحتراف - التطبيقات الذكية والمشاريع المبتكرة</h3>
+                    <p>يمثل المستوى الثالث قمة رحلة الطلاب، حيث ينتقلون من بناء تطبيقات قائمة بذاتها إلى إنشاء تطبيقات متصلة بالعالم الرقمي الواسع. يركز على التفاعل مع مصادر البيانات الخارجية واستخدام خدمات الويب.</p>
+                    
+                    <div class="course-details">
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>8 جلسات</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>ساعة واحدة لكل جلسة</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-award"></i>
+                            <span>متطلب: المستوى الثاني</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-cloud"></i>
+                            <span>تطبيقات متصلة</span>
+                        </div>
+                    </div>
+                    
+                    <h4>ماذا سيتعلم الطفل؟</h4>
+                    <ul>
+                        <li>مقدمة إلى واجهات برمجة التطبيقات (APIs)</li>
+                        <li>بناء تطبيق يعتمد على البيانات الخارجية</li>
+                        <li>لمحة من المستقبل: مقدمة إلى الذكاء الاصطناعي</li>
+                        <li>أساسيات التصميم الجرافيكي لتطبيقات احترافية</li>
+                        <li>مشروع تخرج متكامل</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="methodology-section" id="methodology">
+        <div class="container">
+            <div class="section-title">
+                <h2>منهجيتنا التعليمية</h2>
+                <p>نتبع أسس نظرية قائمة على البنائية المعرفية والتفكير الحسابي، مع التركيز على الإبداع واللعب</p>
+            </div>
+            
+            <div class="methodology-grid">
+                <div class="methodology-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>البنائية المعرفية</h3>
+                    <p>نؤمن بأن المتعلمين لا يستقبلون المعرفة بشكل سلبي، بل يقومون ببنائها بنشاط من خلال تجاربهم وتفاعلاتهم مع العالم.</p>
+                </div>
+                
+                <div class="methodology-card">
+                    <i class="fas fa-users"></i>
+                    <h3>البنائية الاجتماعية</h3>
+                    <p>نؤكد على دور التفاعل الاجتماعي في عملية التعلم من خلال أنشطة مثل البرمجة الزوجية وعرض المشاريع.</p>
+                </div>
+                
+                <div class="methodology-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>التفكير الحسابي</h3>
+                    <p>ننمي مهارات التفكير الحسابي: التجزئة، التعرف على الأنماط، التجريد، وتصميم الخوارزميات.</p>
+                </div>
+                
+                <div class="methodology-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>الإبداع واللعب</h3>
+                    <p>نحول البرمجة إلى نشاط إبداعي يسمح للطلاب بالتعبير عن أنفسهم وتجربة أفكارهم بحرية.</p>
+                </div>
+                
+                <div class="methodology-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>التطبيق العملي</h3>
+                    <p>نربط التعلم مباشرة بحياة الطلاب اليومية واهتماماتهم من خلال بناء تطبيقات حقيقية يمكن استخدامها.</p>
+                </div>
+                
+                <div class="methodology-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>التعلم المتدرج</h3>
+                    <p>نبني المعرفة بشكل متدرج، حيث يتم بناء كل مستوى على أساس سابقه، مع توفير تحديات مناسبة لكل مرحلة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="registration-section" id="registration">
+        <div class="container">
+            <div class="section-title">
+                <h2>سجل الآن</h2>
+                <p>انضم إلينا في رحلة الإبداع الرقمي وتمكين طفلك ليصبح مبتكرًا تقنيًا</p>
+            </div>
+            
+            <div class="registration-content">
+                <div class="registration-text">
+                    <h2>ابدأ رحلة البرمجة اليوم</h2>
+                    <p>مع منهج متكامل من ثلاثة مستويات، نضمن لطفلك تجربة تعليمية ممتعة وفعالة تنمي مهارات التفكير الحسابي والإبداع وحل المشكلات.</p>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>24 جلسة تدريبية (8 جلسات لكل مستوى)</span>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>مشروع عملي في نهاية كل مستوى</span>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>شهادة إتمام لكل مستوى</span>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم فني ومتابعة مستمرة</span>
+                    </div>
+                    
+                    <a href="https://wa.me/+201097430973" class="btn btn-primary">تواصل معنا عبر الواتساب</a>
+                </div>
+                
+                <div class="registration-form">
+                    <form id="registration-form">
+                        <div class="form-group">
+                            <label for="name">اسم ولي الأمر</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="child-name">اسم الطفل</label>
+                            <input type="text" id="child-name" name="child-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="child-age">عمر الطفل</label>
+                            <input type="number" id="child-age" name="child-age" min="7" max="17" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="level">المستوى المطلوب</label>
+                            <select id="level" name="level" required>
+                                <option value="">اختر المستوى</option>
+                                <option value="beginner">المستوى الأول: أسس الإبداع الرقمي</option>
+                                <option value="intermediate">المستوى الثاني: غوص أعمق في عالم تطوير التطبيقات</option>
+                                <option value="advanced">المستوى الثالث: نحو الاحتراف</option>
+                                <option value="all">الحزمة الكاملة (الثلاثة مستويات)</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">إرسال</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>KidsCodingHub</h3>
+                    <p>نمكّن الجيل القادم من المبتكرين الرقميين من خلال تعليم البرمجة للأطفال بطرق إبداعية وممتعة.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/kidscdinghub" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@fatmanour1512" target="_blank" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/+201097430973" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#badges">الشارات</a></li>
+                        <li><a href="#course">الكورس</a></li>
+                        <li><a href="#methodology">منهجيتنا</a></li>
+                        <li><a href="#registration">التسجيل</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>تواصل معنا</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:kidscodinghub1512@gmail.com"><i class="fas fa-envelope"></i> kidscodinghub1512@gmail.com</a></li>
+                        <li><a href="https://wa.me/+201097430973"><i class="fab fa-whatsapp"></i> +20 109 743 0973</a></li>
+                        <li><a href="https://www.kidscodinghub.it.com/" target="_blank"><i class="fas fa-blog"></i> مدونتنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>موارد تعليمية</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://appinventor.mit.edu/" target="_blank">MIT App Inventor</a></li>
+                        <li><a href="https://www.kidscodinghub.it.com/" target="_blank">مقالات ومدونات</a></li>
+                        <li><a href="https://www.youtube.com/@fatmanour1512" target="_blank">فيديوهات تعليمية</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- في قسم footer-links -->
+<li><a href="admin.html" target="_blank">لوحة التحكم</a></li>
+            <div class="copyright">
+                <p>&copy; 2025 KidsCodingHub. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>تم إرسال طلبك بنجاح!</h3>
+            <p>سنقوم بالتواصل معك قريبًا لتأكيد التسجيل.</p>
+            <div class="modal-buttons">
+                <button class="btn btn-primary" id="close-modal">حسنًا</button>
+                <button class="btn btn-secondary" id="whatsapp-btn">إرسال عبر الواتساب</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
